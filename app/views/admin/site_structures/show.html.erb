@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Page:</strong>
+  <%= @admin_site_structure.page_id %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @admin_site_structure.category_id %>
+</p>
+
+<p>
+  <strong>Parend:</strong>
+  <%= @admin_site_structure.parent_id %>
+</p>
+
+<p>
+  <strong>Category primary:</strong>
+  <%= @admin_site_structure.category_primary %>
+</p>
+
+<p>
+  <strong>Children count:</strong>
+  <%= @admin_site_structure.children_count %>
+</p>
+
+<p>
+  <strong>Sort:</strong>
+  <%= @admin_site_structure.sort %>
+</p>
+
+<%= link_to 'Edit', edit_admin_site_structure_path(@admin_site_structure) %> |
+<%= link_to 'Back', admin_site_structures_path %>

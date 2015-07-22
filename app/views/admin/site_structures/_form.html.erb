@@ -1,0 +1,41 @@
+<%= form_for(@admin_site_structure) do |f| %>
+  <% if @admin_site_structure.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_site_structure.errors.count, "error") %> prohibited this admin_site_structure from being saved:</h2>
+
+      <ul>
+      <% @admin_site_structure.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :page_id %><br>
+    <%= f.number_field :page_id %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.number_field :category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_id %><br>
+    <%= f.number_field :parent_id %>
+  </div>
+  <div class="field">
+    <%= f.label :category_primary %><br>
+    <%= f.number_field :category_primary %>
+  </div>
+  <div class="field">
+    <%= f.label :children_count %><br>
+    <%= f.number_field :children_count %>
+  </div>
+  <div class="field">
+    <%= f.label :sort %><br>
+    <%= f.number_field :sort %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

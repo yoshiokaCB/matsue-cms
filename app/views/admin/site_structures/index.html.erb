@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Admin Site Structures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Page</th>
+      <th>Category</th>
+      <th>Parent</th>
+      <th>Category primary</th>
+      <th>Children count</th>
+      <th>routes</th>
+      <th>Sort</th>
+      <th>Depth</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_site_structures.each do |admin_site_structure| %>
+      <tr>
+        <td><%= admin_site_structure.id %></td>
+        <td><%= admin_site_structure.page.try(:display_name) %></td>
+        <td><%= admin_site_structure.category.try(:display_name) %></td>
+        <td><%= admin_site_structure.parent.try(:display_name) %></td>
+        <td><%= admin_site_structure.category_primary %></td>
+        <td><%= admin_site_structure.children_count %></td>
+        <td><%= admin_site_structure.routes %></td>
+        <td><%= admin_site_structure.sort %></td>
+        <td><%= admin_site_structure.depth %></td>
+        <td><%= link_to 'Show', admin_site_structure %></td>
+        <td><%= link_to 'Edit', edit_admin_site_structure_path(admin_site_structure) %></td>
+        <td><%= link_to 'Destroy', admin_site_structure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Site structure', new_admin_site_structure_path %>

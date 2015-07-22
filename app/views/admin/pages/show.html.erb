@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Display name:</strong>
+  <%= @admin_page.display_name %>
+</p>
+
+<p>
+  <strong>Sub display name:</strong>
+  <%= @admin_page.sub_display_name %>
+</p>
+
+<p>
+  <strong>Url name:</strong>
+  <%= @admin_page.url_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @admin_page.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @admin_page.status %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @admin_page.date %>
+</p>
+
+<p>
+  <strong>Date visible:</strong>
+  <%= @admin_page.date_visible %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @admin_page.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @admin_page.end_date %>
+</p>
+
+<p>
+  <strong>Redirect url:</strong>
+  <%= @admin_page.redirect_url %>
+</p>
+
+<p>
+  <strong>Redirect target:</strong>
+  <%= @admin_page.redirect_target %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @admin_page.body_id %>
+</p>
+
+<p>
+  <strong>Meta:</strong>
+  <%= @admin_page.meta_id %>
+</p>
+
+<p>
+  <strong>Replace:</strong>
+  <%= @admin_page.replace_id %>
+</p>
+
+<p>
+  <strong>Lock version:</strong>
+  <%= @admin_page.lock_version %>
+</p>
+
+<%= link_to 'Edit', edit_admin_page_path(@admin_page) %> |
+<%= link_to 'Back', admin_pages_path %>

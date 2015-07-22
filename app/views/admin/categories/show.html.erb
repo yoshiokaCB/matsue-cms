@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Display name:</strong>
+  <%= @admin_category.display_name %>
+</p>
+
+<p>
+  <strong>Url name:</strong>
+  <%= @admin_category.url_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @admin_category.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @admin_category.status %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @admin_category.date %>
+</p>
+
+<p>
+  <strong>Date visible:</strong>
+  <%= @admin_category.date_visible %>
+</p>
+
+<p>
+  <strong>Tree type:</strong>
+  <%= @admin_category.tree_type %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @admin_category.body_id %>
+</p>
+
+<p>
+  <strong>Default body:</strong>
+  <%= @admin_category.default_body_id %>
+</p>
+
+<p>
+  <strong>Meta:</strong>
+  <%= @admin_category.meta_id %>
+</p>
+
+<p>
+  <strong>Lock version:</strong>
+  <%= @admin_category.lock_version %>
+</p>
+
+<%= link_to 'Edit', edit_admin_category_path(@admin_category) %> |
+<%= link_to 'Back', admin_categories_path %>

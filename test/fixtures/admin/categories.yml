@@ -1,0 +1,153 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+about:
+  id: 1
+  display_name: About us
+  url_name: about_us
+  description:
+  status: 1
+  date: 2015-07-16 00:06:34
+  date_visible: 1
+  tree_type: 1
+  body_id: 1
+  default_body_id: 1
+  meta_id: 1
+  lock_version: 0
+
+service:
+  id: 2
+  display_name: Service
+  url_name: service
+  description: Service Info
+  status: 1
+  date: 2015-07-16 00:06:34
+  date_visible: 1
+  tree_type: 1
+  body_id: 1
+  default_body_id: 1
+  meta_id: 1
+  lock_version: 0
+
+works:
+  id: 3
+  display_name: Works
+  url_name: works
+  description: Works List
+  status: 1
+  date: 2015-07-16 00:06:34
+  date_visible: 1
+  tree_type: 1
+  body_id: 1
+  default_body_id: 1
+  meta_id: 1
+  lock_version: 0
+
+contact:
+  id: 4
+  display_name: Contact
+  url_name: contact
+  description: How To Contact
+  status: 1
+  date: 2015-07-16 00:06:34
+  date_visible: 1
+  tree_type: 1
+  body_id: 1
+  default_body_id: 1
+  meta_id: 1
+  lock_version: 0
+
+access:
+  id: 5
+  display_name: Access
+  url_name: access
+  description: How To Access
+  status: 1
+  date: 2015-07-16 00:06:34
+  date_visible: 1
+  tree_type: 1
+  body_id: 1
+  default_body_id: 1
+  meta_id: 1
+  lock_version: 0
+
+news:
+  id: 6
+  display_name: News
+  url_name: news
+  description:
+  status: 1
+  date: 2015-07-16 00:06:34
+  date_visible: 1
+  tree_type: 1
+  body_id: 1
+  default_body_id: 1
+  meta_id: 1
+  lock_version: 0
+
+# serviceの下層カテゴリー
+service_lower1:
+  id: 7
+  display_name: WebSite
+  url_name: website
+  description:
+  status: 1
+  date: 2015-07-16 00:06:34
+  date_visible: 1
+  tree_type: 1
+  body_id: 1
+  default_body_id: 1
+  meta_id: 1
+  lock_version: 0
+service_lower2:
+  id: 8
+  display_name: System
+  url_name: system
+  description:
+  status: 1
+  date: 2015-07-16 00:06:34
+  date_visible: 1
+  tree_type: 1
+  body_id: 1
+  default_body_id: 1
+  meta_id: 1
+  lock_version: 0
+service_lower3:
+  id: 9
+  display_name: Server
+  url_name: server
+  description:
+  status: 1
+  date: 2015-07-16 00:06:34
+  date_visible: 1
+  tree_type: 1
+  body_id: 1
+  default_body_id: 1
+  meta_id: 1
+  lock_version: 0
+service_lower1_lower1:
+  id: 10
+  display_name: Design
+  url_name: design
+  description:
+  status: 1
+  date: 2015-07-16 00:06:34
+  date_visible: 1
+  tree_type: 1
+  body_id: 1
+  default_body_id: 1
+  meta_id: 1
+  lock_version: 0
+service_lower1_lower2:
+  id: 11
+  display_name: Markup
+  url_name: markup
+  description:
+  status: 1
+  date: 2015-07-16 00:06:34
+  date_visible: 1
+  tree_type: 1
+  body_id: 1
+  default_body_id: 1
+  meta_id: 1
+  lock_version: 0
+

@@ -1,0 +1,178 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+#category
+about:
+  id: 1
+  page_id:
+  category_id: 1
+  parent_id: 0
+  category_primary: 0
+  children_count: 0
+  routes: 0
+  depth: 1
+  sort: 0
+service:
+  id: 2
+  page_id:
+  category_id: 2
+  parent_id: 0
+  category_primary: 0
+  children_count: 0
+  routes: 0
+  depth: 1
+  sort: 0
+work:
+  id: 3
+  page_id:
+  category_id: 3
+  parent_id: 0
+  category_primary: 0
+  children_count: 0
+  routes: 0
+  depth: 1
+  sort: 0
+contact:
+  id: 4
+  page_id:
+  category_id: 4
+  parent_id: 0
+  category_primary: 0
+  children_count: 0
+  routes: 0
+  depth: 1
+  sort: 0
+access:
+  id: 5
+  page_id:
+  category_id: 5
+  parent_id: 0
+  category_primary: 0
+  children_count: 0
+  routes: 0
+  depth: 1
+  sort: 0
+news:
+  id: 6
+  page_id:
+  category_id: 6
+  parent_id: 0
+  category_primary: 0
+  children_count: 0
+  routes: 0
+  depth: 1
+  sort: 0
+
+# page
+service1:
+  id: 7
+  page_id: 1
+  category_id:
+  parent_id: 2
+  category_primary: 0
+  children_count: 0
+  routes: 0-2
+  depth: 2
+  sort: 0
+service2:
+  id: 8
+  page_id: 2
+  category_id:
+  parent_id: 2
+  category_primary: 0
+  children_count: 0
+  routes: 0-2
+  depth: 2
+  sort: 0
+
+work1:
+  id: 9
+  page_id: 3
+  category_id:
+  parent_id: 3
+  category_primary: 0
+  routes: 0
+  depth: 2-3
+  sort: 0
+work2:
+  id: 10
+  page_id: 4
+  category_id:
+  parent_id: 3
+  category_primary: 0
+  children_count: 0
+  routes: 0-3
+  depth: 2
+  sort: 0
+
+news1:
+  id: 11
+  page_id: 5
+  category_id:
+  parent_id: 6
+  category_primary: 0
+  children_count: 0
+  routes: 0-6
+  depth: 2
+  sort: 0
+news2:
+  id: 12
+  page_id: 6
+  category_id:
+  parent_id: 6
+  category_primary: 0
+  children_count: 0
+  routes: 0-6
+  depth: 2
+  sort: 0
+
+# serviceの下層カテゴリー
+service_lower1:
+  id: 13
+  page_id:
+  category_id: 7
+  parent_id: 2
+  category_primary: 0
+  children_count: 0
+  routes: 0-2
+  depth: 2
+  sort: 0
+service_lower2:
+  id: 14
+  page_id:
+  category_id: 8
+  parent_id: 2
+  category_primary: 0
+  children_count: 0
+  routes: 0-2
+  depth: 2
+  sort: 0
+service_lower3:
+  id: 15
+  page_id:
+  category_id: 9
+  parent_id: 2
+  category_primary: 0
+  children_count: 0
+  routes: 0-2
+  depth: 2
+  sort: 0
+service_lower1_lower1:
+  id: 16
+  page_id:
+  category_id: 10
+  parent_id: 7
+  category_primary: 0
+  children_count: 0
+  routes: 0-2-13
+  depth: 3
+  sort: 0
+service_lower1_lower2:
+  id: 17
+  page_id:
+  category_id: 11
+  parent_id: 7
+  category_primary: 0
+  children_count: 0
+  routes: 0-2-13
+  depth: 3
+  sort: 0

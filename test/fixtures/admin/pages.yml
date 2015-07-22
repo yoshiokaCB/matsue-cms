@@ -1,0 +1,107 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  replace_id:
+  display_name: service1
+  sub_display_name:
+  url_name: service1
+  description: service detail1
+  status: 1
+  date: 2015-07-16 00:06:54
+  date_visible: 1
+  start_date: 2015-07-16 00:06:54
+  end_date: 2015-07-16 00:06:54
+  redirect_url:
+  redirect_target: 0
+  body_id: 1
+  meta_id: 1
+  lock_version: 0
+service2:
+  id: 2
+  replace_id:
+  display_name: service2
+  sub_display_name:
+  url_name: service2
+  description: service detail2
+  status: 1
+  date: 2015-07-16 00:06:54
+  date_visible: 1
+  start_date: 2015-07-16 00:06:54
+  end_date: 2015-07-16 00:06:54
+  redirect_url:
+  redirect_target: 0
+  body_id: 1
+  meta_id: 1
+  lock_version: 0
+
+work1:
+  id: 3
+  replace_id:
+  display_name: work1
+  sub_display_name:
+  url_name: work1
+  description: work1 detail1
+  status: 1
+  date: 2015-07-16 00:06:54
+  date_visible: 1
+  start_date: 2015-07-16 00:06:54
+  end_date: 2015-07-16 00:06:54
+  redirect_url:
+  redirect_target: 0
+  body_id: 1
+  meta_id: 1
+  lock_version: 0
+work2:
+  id: 4
+  replace_id:
+  display_name: work2
+  sub_display_name:
+  url_name: work2
+  description: work1 detail2
+  status: 1
+  date: 2015-07-16 00:06:54
+  date_visible: 1
+  start_date: 2015-07-16 00:06:54
+  end_date: 2015-07-16 00:06:54
+  redirect_url:
+  redirect_target: 0
+  body_id: 1
+  meta_id: 1
+  lock_version: 0
+
+news1:
+  id: 5
+  replace_id:
+  display_name: news1
+  sub_display_name:
+  url_name: news1
+  description: news1 detail1
+  status: 1
+  date: 2015-07-16 00:06:54
+  date_visible: 1
+  start_date: 2015-07-16 00:06:54
+  end_date: 2015-07-16 00:06:54
+  redirect_url:
+  redirect_target: 0
+  body_id: 1
+  meta_id: 1
+  lock_version: 0
+news2:
+  id: 6
+  replace_id:
+  display_name: news2
+  sub_display_name:
+  url_name: news2
+  description: news1 detail2
+  status: 1
+  date: 2015-07-16 00:06:54
+  date_visible: 1
+  start_date: 2015-07-16 00:06:54
+  end_date: 2015-07-16 00:06:54
+  redirect_url:
+  redirect_target: 0
+  body_id: 1
+  meta_id: 1
+  lock_version: 0
+
