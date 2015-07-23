@@ -27,10 +27,33 @@ class Admin::SiteStructureTest < ActiveSupport::TestCase
 
   end
 
+  context "下層のカテゴリー、ページのカウントのテスト" do
+    test "saveされたときに上位のカテゴリーのcountを更新する" do
+
+    end
+  end
+
   context "カテゴリーを移動した倍の処理" do
+    setup do
+      @service = Admin::SiteStructure.find(2)
+      @service.parent_id = 1
+      @service.save
+    end
     test "下層のカテゴリーのroutesも変化する。" do
+      check_lower_routes(@service)
     end
     test "下層のカテゴリーのdepthも変化する。" do
+    end
+  end
+
+  def check_lower_routes(parent)
+    children = Admin::SiteStructure.where(parent_id: parent.id)
+    routes   = parent.routes + "-" + parent.id.to_s
+    children.each do |child|
+      assert_equal routes, child.routes
+      if Admin::SiteStructure.where(parent_id: parent.id).count > 0
+        check_lower_routes(child)
+      end
     end
   end
 
