@@ -43,6 +43,7 @@ class Admin::SiteStructureTest < ActiveSupport::TestCase
       check_lower_routes(@service)
     end
     test "下層のカテゴリーのdepthも変化する。" do
+      check_lower_depth(@service)
     end
   end
 
@@ -53,6 +54,17 @@ class Admin::SiteStructureTest < ActiveSupport::TestCase
       assert_equal routes, child.routes
       if Admin::SiteStructure.where(parent_id: parent.id).count > 0
         check_lower_routes(child)
+      end
+    end
+  end
+
+  def check_lower_depth(parent)
+    children = Admin::SiteStructure.where(parent_id: parent.id)
+    depth    = parent.depth + 1
+    children.each do |child|
+      assert_equal depth, child.depth
+      if Admin::SiteStructure.where(parent_id: parent.id).count > 0
+        check_lower_depth(child)
       end
     end
   end

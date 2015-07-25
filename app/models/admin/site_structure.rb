@@ -5,7 +5,8 @@ class Admin::SiteStructure < ActiveRecord::Base
   belongs_to :category, class_name: 'Admin::Category'
 
   before_save :set_routes, :set_depth
-  after_save :set_lower_routes
+  after_save  :set_lower
+
   def set_routes
     parent = self.class.where(id: self.parent_id).first
     self.routes =
@@ -15,6 +16,7 @@ class Admin::SiteStructure < ActiveRecord::Base
           "0"
         end
   end
+
   def set_depth
     parent = self.class.where(id: self.parent_id).first
     self.depth =
@@ -25,13 +27,9 @@ class Admin::SiteStructure < ActiveRecord::Base
         end
   end
 
-  def set_lower_routes
+  def set_lower
     children = Admin::SiteStructure.where(parent_id: self.id)
-    new_routes = self.routes + "-" + self.id.to_s
-    children.each do |child|
-      child.routes = new_routes
-      child.save
-    end
+    children.each { |child| child.save }
   end
 
 end
