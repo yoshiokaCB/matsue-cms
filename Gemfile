@@ -58,5 +58,6 @@ group :test do
 end
 
 gem 'nested_form'
+gem "less-rails"
 gem 'twitter-bootstrap-rails'
 
