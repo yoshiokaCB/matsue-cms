@@ -31,7 +31,8 @@
         <td><%= admin_site_structure.sort %></td>
         <td><%= admin_site_structure.depth %></td>
         <td><%= link_to 'Show', admin_site_structure, class: 'btn' %></td>
-        <td><%= link_to 'Edit', edit_admin_site_structure_path(admin_site_structure), class: 'btn' %></td>
+        <!--<td><%= link_to 'Edit', edit_admin_site_structure_path(admin_site_structure), class: 'btn' %></td>-->
+        <td><%= contents_edit(admin_site_structure) %></td>
         <td><%= link_to 'Destroy', admin_site_structure, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn' %></td>
       </tr>
     <% end %>
