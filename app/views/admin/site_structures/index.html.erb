@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Admin Site Structures</h1>
+<h1><%= t('activerecord.attributes.admin/site_structure.index_title') %></h1>
 
 <table class="table table-bordered table-hover table-condensed">
   <thead>
@@ -10,7 +10,8 @@
       <th>Category</th>
       <th>Parent</th>
       <th>Category primary</th>
-      <th>Children count</th>
+      <th>Children page count</th>
+      <th>Children category count</th>
       <th>routes</th>
       <th>Sort</th>
       <th>Depth</th>
@@ -26,14 +27,14 @@
         <td><%= admin_site_structure.category.try(:display_name) %></td>
         <td><%= admin_site_structure.parent.try(:display_name) %></td>
         <td><%= admin_site_structure.category_primary %></td>
-        <td><%= admin_site_structure.children_count %></td>
+        <td><%= admin_site_structure.children_pages_count %></td>
+        <td><%= admin_site_structure.children_categories_count %></td>
         <td><%= admin_site_structure.routes %></td>
         <td><%= admin_site_structure.sort %></td>
         <td><%= admin_site_structure.depth %></td>
-        <td><%= link_to 'Show', admin_site_structure, class: 'btn' %></td>
-        <!--<td><%= link_to 'Edit', edit_admin_site_structure_path(admin_site_structure), class: 'btn' %></td>-->
+        <td><%= link_to t('common.show'), admin_site_structure, class: 'btn' %></td>
         <td><%= contents_edit(admin_site_structure) %></td>
-        <td><%= link_to 'Destroy', admin_site_structure, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn' %></td>
+        <td><%= link_to t('common.destroy'), admin_site_structure, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -41,4 +42,4 @@
 
 <br>
 
-<%= link_to 'New Site structure', new_admin_site_structure_path %>
+<%= link_to t('common.new'), new_admin_site_structure_path, class: 'btn' %>

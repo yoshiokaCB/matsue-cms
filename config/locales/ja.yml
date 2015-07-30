@@ -1,0 +1,71 @@
+ja:
+  common:
+    show: 確認
+    new: 新規登録
+    edit: 編集
+    destroy: 削除
+    back: 戻る
+
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      short: "%m/%d"
+      long: "%Y年%m月%d日(%a)"
+    day_names: [日曜日, 月曜日, 火曜日, 水曜日, 木曜日, 金曜日, 土曜日]
+    abbr_day_names: [日, 月, 火, 水, 木, 金, 土]
+    month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
+    abbr_month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
+    order:
+      - :year
+      - :month
+      - :day
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      short: "%y/%m/%d %H:%M"
+      long: "%Y年%m月%d日(%a) %H時%M分%S秒 %Z"
+    am: "午前"
+    pm: "午後"
+
+  activerecord:
+    attributes:
+      admin/page:
+
+        new_title: ページ新規登録
+        edit_title: ページ編集
+
+        display_name: ページタイトル
+        sub_display_name: サブタイトル
+        url_name: url名
+        description: ページ概要
+        status: 状態
+        date: 表示日付
+        date_visible: 表示選択
+        start_date: 公開開始日
+        end_date: 公開終了日
+        redirect_url: リンクURL
+        redirect_target: ターゲット
+        body_id: 本文
+        meta_id: メタ
+
+      admin/category:
+
+        new_title: カテゴリー新規登録
+        edit_title: カテゴリー編集
+
+        display_name: ページタイトル
+        url_name: url名
+        description: ページ概要
+        status: 状態
+        date: 表示日付
+        date_visible: 表示選択
+        body_id: 本文
+        default_body_id: ページ本文のデフォルト値
+        tree_type: 下層リストの表示選択
+        meta_id: メタ
+
+      admin/site_structure:
+
+        index_title: コンテンツ一覧
+
+

@@ -74,7 +74,8 @@ class Admin::SiteStructuresController < ApplicationController
           :category_id,
           :parent_id,
           :category_primary,
-          :children_count,
+          :children_pages_count,
+          :children_categories_count,
           :routes,
           :sort
       )

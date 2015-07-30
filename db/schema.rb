@@ -55,11 +55,12 @@ ActiveRecord::Schema.define(version: 20150718023827) do
     t.integer  "parent_id"
     t.string   "routes"
     t.integer  "category_primary"
-    t.integer  "children_count"
+    t.integer  "children_pages_count"
+    t.integer  "children_categories_count"
     t.integer  "depth"
     t.integer  "sort"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
 end

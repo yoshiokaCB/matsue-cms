@@ -7,7 +7,6 @@ about:
   category_id: 1
   parent_id: 0
   category_primary: 0
-  children_count: 0
   routes: 0
   depth: 1
   sort: 0
@@ -17,7 +16,6 @@ service:
   category_id: 2
   parent_id: 0
   category_primary: 0
-  children_count: 0
   routes: 0
   depth: 1
   sort: 0
@@ -27,7 +25,6 @@ work:
   category_id: 3
   parent_id: 0
   category_primary: 0
-  children_count: 0
   routes: 0
   depth: 1
   sort: 0
@@ -37,7 +34,6 @@ contact:
   category_id: 4
   parent_id: 0
   category_primary: 0
-  children_count: 0
   routes: 0
   depth: 1
   sort: 0
@@ -47,7 +43,6 @@ access:
   category_id: 5
   parent_id: 0
   category_primary: 0
-  children_count: 0
   routes: 0
   depth: 1
   sort: 0
@@ -57,7 +52,6 @@ news:
   category_id: 6
   parent_id: 0
   category_primary: 0
-  children_count: 0
   routes: 0
   depth: 1
   sort: 0
@@ -69,7 +63,6 @@ service1:
   category_id:
   parent_id: 2
   category_primary: 0
-  children_count: 0
   routes: 0-2
   depth: 2
   sort: 0
@@ -79,7 +72,6 @@ service2:
   category_id:
   parent_id: 2
   category_primary: 0
-  children_count: 0
   routes: 0-2
   depth: 2
   sort: 0
@@ -99,7 +91,6 @@ work2:
   category_id:
   parent_id: 3
   category_primary: 0
-  children_count: 0
   routes: 0-3
   depth: 2
   sort: 0
@@ -110,7 +101,6 @@ news1:
   category_id:
   parent_id: 6
   category_primary: 0
-  children_count: 0
   routes: 0-6
   depth: 2
   sort: 0
@@ -120,7 +110,6 @@ news2:
   category_id:
   parent_id: 6
   category_primary: 0
-  children_count: 0
   routes: 0-6
   depth: 2
   sort: 0
@@ -132,7 +121,6 @@ service_lower1:
   category_id: 7
   parent_id: 2
   category_primary: 0
-  children_count: 0
   routes: 0-2
   depth: 2
   sort: 0
@@ -142,7 +130,6 @@ service_lower2:
   category_id: 8
   parent_id: 2
   category_primary: 0
-  children_count: 0
   routes: 0-2
   depth: 2
   sort: 0
@@ -152,7 +139,6 @@ service_lower3:
   category_id: 9
   parent_id: 2
   category_primary: 0
-  children_count: 0
   routes: 0-2
   depth: 2
   sort: 0
@@ -162,7 +148,6 @@ service_lower1_lower1:
   category_id: 10
   parent_id: 7
   category_primary: 0
-  children_count: 0
   routes: 0-2-13
   depth: 3
   sort: 0
@@ -172,7 +157,6 @@ service_lower1_lower2:
   category_id: 11
   parent_id: 7
   category_primary: 0
-  children_count: 0
   routes: 0-2-13
   depth: 3
   sort: 0

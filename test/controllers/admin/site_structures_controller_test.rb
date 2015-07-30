@@ -18,7 +18,15 @@ class Admin::SiteStructuresControllerTest < ActionController::TestCase
 
   test "should create admin_site_structure" do
     assert_difference('Admin::SiteStructure.count') do
-      post :create, admin_site_structure: { category_id: @admin_site_structure.category_id, category_primary: @admin_site_structure.category_primary, children_count: @admin_site_structure.children_count, page_id: @admin_site_structure.page_id, parent_id: @admin_site_structure.parent_id, sort: @admin_site_structure.sort }
+      post :create, admin_site_structure: {
+                      category_id: @admin_site_structure.category_id,
+                      category_primary: @admin_site_structure.category_primary,
+                      children_pages_count: @admin_site_structure.children_pages_count,
+                      children_categories_count: @admin_site_structure.children_categories_count,
+                      page_id: @admin_site_structure.page_id,
+                      parent_id: @admin_site_structure.parent_id,
+                      sort: @admin_site_structure.sort
+                  }
     end
 
     assert_redirected_to admin_site_structure_path(assigns(:admin_site_structure))
@@ -35,7 +43,15 @@ class Admin::SiteStructuresControllerTest < ActionController::TestCase
   end
 
   test "should update admin_site_structure" do
-    patch :update, id: @admin_site_structure, admin_site_structure: { category_id: @admin_site_structure.category_id, category_primary: @admin_site_structure.category_primary, children_count: @admin_site_structure.children_count, page_id: @admin_site_structure.page_id, parent_id: @admin_site_structure.parent_id, sort: @admin_site_structure.sort }
+    patch :update, id: @admin_site_structure, admin_site_structure: {
+                     category_id: @admin_site_structure.category_id,
+                     category_primary: @admin_site_structure.category_primary,
+                     children_pages_count: @admin_site_structure.children_pages_count,
+                     children_categories_count: @admin_site_structure.children_categories_count,
+                     page_id: @admin_site_structure.page_id,
+                     parent_id: @admin_site_structure.parent_id,
+                     sort: @admin_site_structure.sort
+                 }
     assert_redirected_to admin_site_structure_path(assigns(:admin_site_structure))
   end
 

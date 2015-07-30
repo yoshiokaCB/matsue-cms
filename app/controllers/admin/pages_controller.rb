@@ -93,7 +93,8 @@ class Admin::PagesController < ApplicationController
               :parent_id,
               :primary_cate,
               :sort,
-              :children_count,
+              :page_children_count,
+              :category_children_count,
               :_destroy,
           ],
       )
