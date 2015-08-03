@@ -6,9 +6,10 @@ class Admin::SiteStructureTest < ActiveSupport::TestCase
   # end
   context "階層構造のテスト" do
     setup do
-      cate = Admin::Category.create(display_name: "hoge", url_name: "hgoe")
-      @ss1 = Admin::SiteStructure.create(category_id: cate.id, parent_id: 1 )
-      @ss2 = Admin::SiteStructure.create(category_id: cate.id, parent_id: 17 )
+      cate1 = Admin::Category.create(display_name: "hoge", url_name: "hgoe")
+      @ss1 = Admin::SiteStructure.create(category_id: cate1.id, parent_id: 1 )
+      cate2 = Admin::Category.create(display_name: "foo", url_name: "foo")
+      @ss2 = Admin::SiteStructure.create(category_id: cate2.id, parent_id: 17 )
     end
 
     test "routesのセットテスト" do
@@ -27,8 +28,39 @@ class Admin::SiteStructureTest < ActiveSupport::TestCase
 
   end
 
-  context "下層のカテゴリー、ページのカウントのテスト" do
-    test "saveされたときに上位のカテゴリーのcountを更新する" do
+  context "下層のコンテンツのカウントのテスト" do
+    test "新規登録したときに親のsite_structureのchildren_xxx_countが増える" do
+
+      # 新規登録時
+      # after_create
+      # page, categoryを判別してそれぞれカウントアップ
+
+      cate1 = Admin::Category.create(display_name: "hoge", url_name: "hgoe")
+      ss1   = Admin::SiteStructure.create(category_id: cate1.id, parent_id: 1, children_pages_count: 0 )
+
+      page = Admin::SiteStructure.create(page_id: 1, parent_id: ss1.id)
+      ss   = Admin::SiteStructure.find page.parent_id
+      assert_equal 1, ss.children_pages_count
+
+      cate = Admin::SiteStructure.create(category_id: 1, parent_id: ss1.id)
+      ss   = Admin::SiteStructure.find cate.parent_id
+      assert_equal 1, ss.children_categories_count
+
+
+      # 削除時
+      # before_destroy
+      # page, categoryを判別してそれぞれカウントダウン
+
+      page.destroy
+      ss   = Admin::SiteStructure.find page.parent_id
+      assert_equal 0, ss.children_pages_count
+
+      cate.destroy
+      ss   = Admin::SiteStructure.find cate.parent_id
+      assert_equal 0, ss.children_categories_count
+
+    end
+    test "削除したときに親のsite_structureのchildren_xxx_countが減る" do
 
     end
   end

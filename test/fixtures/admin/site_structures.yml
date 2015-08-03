@@ -10,6 +10,8 @@ about:
   routes: 0
   depth: 1
   sort: 0
+  children_pages_count: 0
+  children_categories_count: 0
 service:
   id: 2
   page_id:
@@ -19,6 +21,8 @@ service:
   routes: 0
   depth: 1
   sort: 0
+  children_pages_count: 2
+  children_categories_count: 3
 work:
   id: 3
   page_id:
@@ -28,6 +32,8 @@ work:
   routes: 0
   depth: 1
   sort: 0
+  children_pages_count: 2
+  children_categories_count: 0
 contact:
   id: 4
   page_id:
@@ -37,6 +43,8 @@ contact:
   routes: 0
   depth: 1
   sort: 0
+  children_pages_count: 0
+  children_categories_count: 0
 access:
   id: 5
   page_id:
@@ -46,6 +54,8 @@ access:
   routes: 0
   depth: 1
   sort: 0
+  children_pages_count: 0
+  children_categories_count: 0
 news:
   id: 6
   page_id:
@@ -55,6 +65,8 @@ news:
   routes: 0
   depth: 1
   sort: 0
+  children_pages_count: 2
+  children_categories_count: 0
 
 # page
 service1:
@@ -66,6 +78,8 @@ service1:
   routes: 0-2
   depth: 2
   sort: 0
+  children_pages_count: 0
+  children_categories_count: 0
 service2:
   id: 8
   page_id: 2
@@ -75,6 +89,8 @@ service2:
   routes: 0-2
   depth: 2
   sort: 0
+  children_pages_count: 0
+  children_categories_count: 0
 
 work1:
   id: 9
@@ -85,6 +101,8 @@ work1:
   routes: 0
   depth: 2-3
   sort: 0
+  children_pages_count: 0
+  children_categories_count: 0
 work2:
   id: 10
   page_id: 4
@@ -94,6 +112,8 @@ work2:
   routes: 0-3
   depth: 2
   sort: 0
+  children_pages_count: 0
+  children_categories_count: 0
 
 news1:
   id: 11
@@ -104,6 +124,8 @@ news1:
   routes: 0-6
   depth: 2
   sort: 0
+  children_pages_count: 0
+  children_categories_count: 0
 news2:
   id: 12
   page_id: 6
@@ -113,6 +135,8 @@ news2:
   routes: 0-6
   depth: 2
   sort: 0
+  children_pages_count: 0
+  children_categories_count: 0
 
 # serviceの下層カテゴリー
 service_lower1:
@@ -124,6 +148,8 @@ service_lower1:
   routes: 0-2
   depth: 2
   sort: 0
+  children_pages_count: 0
+  children_categories_count: 1
 service_lower2:
   id: 14
   page_id:
@@ -133,6 +159,8 @@ service_lower2:
   routes: 0-2
   depth: 2
   sort: 0
+  children_pages_count: 0
+  children_categories_count: 1
 service_lower3:
   id: 15
   page_id:
@@ -142,6 +170,8 @@ service_lower3:
   routes: 0-2
   depth: 2
   sort: 0
+  children_pages_count: 0
+  children_categories_count: 0
 service_lower1_lower1:
   id: 16
   page_id:
@@ -151,6 +181,8 @@ service_lower1_lower1:
   routes: 0-2-13
   depth: 3
   sort: 0
+  children_pages_count: 0
+  children_categories_count: 0
 service_lower1_lower2:
   id: 17
   page_id:
@@ -160,3 +192,5 @@ service_lower1_lower2:
   routes: 0-2-13
   depth: 3
   sort: 0
+  children_pages_count: 0
+  children_categories_count: 0

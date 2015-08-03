@@ -18,7 +18,22 @@ class Admin::PagesControllerTest < ActionController::TestCase
 
   test "should create admin_page" do
     assert_difference('Admin::Page.count') do
-      post :create, admin_page: { body_id: @admin_page.body_id, date: @admin_page.date, date_visible: @admin_page.date_visible, description: @admin_page.description, display_name: @admin_page.display_name, end_date: @admin_page.end_date, lock_version: @admin_page.lock_version, meta_id: @admin_page.meta_id, redirect_target: @admin_page.redirect_target, redirect_url: @admin_page.redirect_url, replace_id: @admin_page.replace_id, start_date: @admin_page.start_date, status: @admin_page.status, sub_display_name: @admin_page.sub_display_name, url_name: @admin_page.url_name }
+      post :create, admin_page: {
+                      body_id: @admin_page.body_id,
+                      date: @admin_page.date,
+                      date_visible: @admin_page.date_visible,
+                      description: @admin_page.description,
+                      display_name: @admin_page.display_name,
+                      end_date: @admin_page.end_date,
+                      meta_id: @admin_page.meta_id,
+                      redirect_target: @admin_page.redirect_target,
+                      redirect_url: @admin_page.redirect_url,
+                      replace_id: @admin_page.replace_id,
+                      start_date: @admin_page.start_date,
+                      status: @admin_page.status,
+                      sub_display_name: @admin_page.sub_display_name,
+                      url_name: @admin_page.url_name
+                  }
     end
 
     assert_redirected_to admin_page_path(assigns(:admin_page))
