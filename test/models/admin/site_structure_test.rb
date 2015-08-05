@@ -79,6 +79,23 @@ class Admin::SiteStructureTest < ActiveSupport::TestCase
     end
   end
 
+  context "contents_titleのテスト" do
+    test "ページのタイトルが表示される" do
+      about = Admin::SiteStructure.find(1)
+      assert_equal "About us", about.contents_title
+    end
+    test "カテゴリーのタイトルが表示される" do
+      about = Admin::SiteStructure.find(7)
+      assert_equal "service1", about.contents_title
+    end
+    test "とちらでも無い場合はRuntimeErrorが返される" do
+      nothing = Admin::SiteStructure.new
+      assert_raise(RuntimeError) { nothing.contents_title }
+    end
+  end
+
+  private
+
   def check_lower_routes(parent)
     children = Admin::SiteStructure.where(parent_id: parent.id)
     routes   = parent.routes + "-" + parent.id.to_s

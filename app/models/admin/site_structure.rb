@@ -4,11 +4,10 @@ class Admin::SiteStructure < ActiveRecord::Base
   belongs_to :parent,   class_name: 'Admin::Category'
   belongs_to :category, class_name: 'Admin::Category'
 
-  before_create  :set_def
-
-  before_save    :set_routes, :set_depth
-  after_save     :set_lower, :set_children_count
-  after_destroy  :set_children_count
+  before_create :set_def
+  before_save   :set_routes, :set_depth
+  after_save    :set_lower, :set_children_count
+  after_destroy :set_children_count
 
   def set_def
     self.sort = 0
@@ -42,14 +41,26 @@ class Admin::SiteStructure < ActiveRecord::Base
   end
 
   def set_children_count
-    self.class.skip_callback(:save, :after, :set_lower)
+    self.class.skip_callback(:save, :after, :set_lower, :set_children_count)
     ps = Admin::SiteStructure.where(id: self.parent_id).first
     if ps.present?
       ps.children_pages_count      = Admin::SiteStructure.where(parent_id: ps.id).where.not(page_id: nil).count
       ps.children_categories_count = Admin::SiteStructure.where(parent_id: ps.id).where.not(page_id: nil).count
       ps.save
     end
-    self.class.set_callback(:save, :after, :set_lower)
+    self.class.set_callback(:save, :after, :set_lower, :set_children_count)
+  end
+
+  # instance methods
+
+  def contents_title
+    if cate = self.category
+      cate.display_name
+    elsif page = self.page
+      page.display_name
+    else
+      raise("カテゴリーもページもありません。")
+    end
   end
 
 end

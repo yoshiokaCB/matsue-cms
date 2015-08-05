@@ -2,6 +2,8 @@ ja:
   common:
     show: 確認
     new: 新規登録
+    page_new: ページ新規登録
+    category_new: カテゴリー新規登録
     edit: 編集
     destroy: 削除
     back: 戻る
@@ -67,5 +69,7 @@ ja:
       admin/site_structure:
 
         index_title: コンテンツ一覧
+        contents_title: タイトル
+        sort: 表示順
 
 
