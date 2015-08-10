@@ -1,3 +1,18 @@
 // Place all the styles related to the admin/site_structures controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+table{
+  .cate{ }
+  .cate:before{
+    content: "Cate";
+    padding-right: 5px;
+    color: #006600;
+    font-weight: bold;
+  }
+  .page:before{
+    content: "Page";
+    padding-right: 5px;
+    color: brown;
+    font-weight: bold;
+  }
+}

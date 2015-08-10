@@ -4,7 +4,9 @@ class Admin::SiteStructuresController < ApplicationController
   # GET /admin/site_structures
   # GET /admin/site_structures.json
   def index
-    @admin_site_structures = Admin::SiteStructure.all
+    # @admin_site_structures = Admin::SiteStructure.all
+    parent_id = params[:category_id] || 0
+    @admin_site_structures = Admin::SiteStructure.where(parent_id: parent_id)
   end
 
   # GET /admin/site_structures/1

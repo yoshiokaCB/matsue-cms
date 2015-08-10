@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
+
   namespace :admin do
+
     resources :site_structures
-  end
-  namespace :admin do
-    resources :categories
-  end
-  namespace :admin do
+    resources :categories do
+      resources :site_structures, only: [:index]
+    end
     resources :pages
+
   end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

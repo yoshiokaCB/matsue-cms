@@ -5,10 +5,25 @@ class Admin::SiteStructuresControllerTest < ActionController::TestCase
     @admin_site_structure = admin_site_structures(:service)
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:admin_site_structures)
+  context "index コンテンツ一覧のテスト" do
+    test "should get index" do
+      get :index
+      assert_response :success
+      assert_not_nil assigns(:admin_site_structures)
+    end
+
+    test "第二下層のコンテンツだけ表示する 第二階層のコンテンツの数は6個である" do
+      get :index
+      exp = 6
+      assert_equal exp, assigns[:admin_site_structures].count
+    end
+
+    test "serviceの下層のコンテンツの数は5個である" do
+      get :index, {category_id: 2}
+      exp = 5
+      assert_equal exp, assigns[:admin_site_structures].count
+    end
+
   end
 
   test "should get new" do
