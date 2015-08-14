@@ -8,6 +8,7 @@
       <th>ID</th>
       <th><%= t("activerecord.attributes.admin/site_structure.index_title") %></th>
       <th><%= t("activerecord.attributes.admin/site_structure.sort") %></th>
+      <th>routes</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= ss.id %></td>
         <td><%= raw(contents_title_html(ss)) %></td>
         <td><%= ss.sort %></td>
+        <td><%= ss.routes %></td>
         <td><%= link_to t('common.show'), ss, class: 'btn' %></td>
         <td><%= link_to(t('common.edit'), ss.call_contents, class: 'btn') %></td>
         <td><%= link_to(

@@ -16,27 +16,27 @@ class Admin::SiteStructure < ActiveRecord::Base
   end
 
   def set_routes
-    parent_site_structure = self.class.where(id: self.parent_id).first
     self.routes =
-        if parent_site_structure.present?
-          [parent_site_structure.routes, parent_site_structure.id].join("-")
+        if parent.present?
+          parent_site_structure = parent.site_structure
+          [parent_site_structure.routes, parent.id].join("-")
         else
           "0"
         end
   end
 
   def set_depth
-    parent_site_structure = self.class.where(id: self.parent_id).first
+    # parent_site_structure = self.class.where(id: self.parent_id).first
     self.depth =
-        if parent_site_structure.present?
-          parent_site_structure.depth + 1
+        if parent.present?
+          parent.site_structure.depth + 1
         else
           1
         end
   end
 
   def set_lower
-    children = Admin::SiteStructure.where(parent_id: self.id)
+    children = Admin::SiteStructure.where(parent_id: self.category.try(:id))
     children.each { |child| child.save }
   end
 

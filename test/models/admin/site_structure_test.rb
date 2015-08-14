@@ -9,14 +9,14 @@ class Admin::SiteStructureTest < ActiveSupport::TestCase
       cate1 = Admin::Category.create(display_name: "hoge", url_name: "hgoe")
       @ss1 = Admin::SiteStructure.create(category_id: cate1.id, parent_id: 1 )
       cate2 = Admin::Category.create(display_name: "foo", url_name: "foo")
-      @ss2 = Admin::SiteStructure.create(category_id: cate2.id, parent_id: 17 )
+      @ss2 = Admin::SiteStructure.create(category_id: cate2.id, parent_id: 11 )
     end
 
     test "routesのセットテスト" do
       assert_not_nil @ss1.routes
       assert_equal "0-1", @ss1.routes
       assert_not_nil @ss2.routes
-      assert_equal "0-2-13-17", @ss2.routes
+      assert_equal "0-2-7-11", @ss2.routes
     end
 
     test "depthのセットテスト" do
@@ -115,22 +115,26 @@ class Admin::SiteStructureTest < ActiveSupport::TestCase
   private
 
   def check_lower_routes(parent)
-    children = Admin::SiteStructure.where(parent_id: parent.id)
-    routes   = parent.routes + "-" + parent.id.to_s
+    parent_id = parent.category.id
+    children  = Admin::SiteStructure.where(parent_id: parent_id)
+    routes    = parent.routes + "-" + parent.category.id.to_s
     children.each do |child|
       assert_equal routes, child.routes
-      if Admin::SiteStructure.where(parent_id: parent.id).count > 0
+      if Admin::SiteStructure.where(parent_id: child.category.try(:id), page_id: nil).count > 0
+        p child
         check_lower_routes(child)
       end
     end
   end
 
   def check_lower_depth(parent)
-    children = Admin::SiteStructure.where(parent_id: parent.id)
-    depth    = parent.depth + 1
+    parent_id = parent.category.id
+    children  = Admin::SiteStructure.where(parent_id: parent_id)
+    depth     = parent.depth + 1
     children.each do |child|
       assert_equal depth, child.depth
-      if Admin::SiteStructure.where(parent_id: parent.id).count > 0
+      if Admin::SiteStructure.where(parent_id: child.category.try(:id), page_id: nil).count > 0
+      # if Admin::SiteStructure.where(parent_id: parent.id).count > 0
         check_lower_depth(child)
       end
     end
