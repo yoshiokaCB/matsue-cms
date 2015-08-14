@@ -26,7 +26,6 @@ class Admin::SiteStructure < ActiveRecord::Base
   end
 
   def set_depth
-    # parent_site_structure = self.class.where(id: self.parent_id).first
     self.depth =
         if parent.present?
           parent.site_structure.depth + 1

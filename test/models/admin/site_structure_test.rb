@@ -134,7 +134,6 @@ class Admin::SiteStructureTest < ActiveSupport::TestCase
     children.each do |child|
       assert_equal depth, child.depth
       if Admin::SiteStructure.where(parent_id: child.category.try(:id), page_id: nil).count > 0
-      # if Admin::SiteStructure.where(parent_id: parent.id).count > 0
         check_lower_depth(child)
       end
     end
