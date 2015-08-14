@@ -27,7 +27,4 @@ module Admin::SiteStructuresHelper
     %*<span class="#{css_name}">#{title}</span>*
   end
 
-  # TODO 削除用メソッドを書く
-  def contents_destroy(site_structure)
-  end
 end

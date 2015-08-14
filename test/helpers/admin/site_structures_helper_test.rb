@@ -30,6 +30,7 @@ class Admin::SiteStructuresHelperTest < ActionView::TestCase
       assert html.include?('class="cate"')
       assert html.include?('About us')
     end
+
     test "categoryがある場合、タイトルには下層のリンクテキストが表示される。" do
       site_structure = Admin::Category.where(url_name: "about_us").first.site_structure
       html = contents_title_html(site_structure)
@@ -50,38 +51,6 @@ class Admin::SiteStructuresHelperTest < ActionView::TestCase
       site_structure = Admin::SiteStructure.new
       assert_raise(RuntimeError) { contents_title_html(site_structure) }
     end
-  end
-
-  context "link_lowerのテスト（下層のコンテンツ一覧へのリンク）" do
-
-    test "返り値がストリングである" do
-    end
-    test "自分のidを渡すと下層のリンクを生成してくれる" do
-
-    end
-    test "pageの場合リンク無しの文字列を返す" do
-
-    end
-    test "引数が不正な値のときはリンク無しの文字列を返す" do
-
-    end
-  end
-
-  # TODO 削除用メソッドのテストを書く
-  context "contents_destroyのテスト" do
-
-    test "返り値がStringである。" do
-    end
-
-    test "page_idがある場合、ページ削除用のリンクになる" do
-    end
-
-    test "category_idがある場合、カテゴリー削除用のリンクになる" do
-    end
-
-    test "page_id, category_id のどちらも無い場合" do
-    end
-
   end
 
 end

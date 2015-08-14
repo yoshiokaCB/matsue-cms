@@ -63,4 +63,14 @@ class Admin::SiteStructure < ActiveRecord::Base
     end
   end
 
+  def call_contents
+    if page.present?
+      page
+    elsif category.present?
+      category
+    else
+      raise("カテゴリーもページもありません。")
+    end
+  end
+
 end

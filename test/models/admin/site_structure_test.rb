@@ -94,6 +94,25 @@ class Admin::SiteStructureTest < ActiveSupport::TestCase
     end
   end
 
+  # TODO コンテンツがcategoryかpageのどちらを含んでいるかを返す
+  context "call_contentsのテスト" do
+    setup do
+      @structure_cate = Admin::SiteStructure.where.not(category_id: nil).first
+      @structure_page = Admin::SiteStructure.where.not(page_id: nil).first
+    end
+    test "page_idがある場合はpageのオブジェクトが返る" do
+      cate = @structure_cate.call_contents
+      assert_not_nil cate
+      assert_equal Admin::Category, cate.class
+    end
+    test "category_idがある場合はcategoryのオブジェクトが返る" do
+      page = @structure_page.call_contents
+      assert_not_nil page
+      assert_equal Admin::Page, page.class
+    end
+
+  end
+
   private
 
   def check_lower_routes(parent)
