@@ -16,20 +16,20 @@ class Admin::SiteStructure < ActiveRecord::Base
   end
 
   def set_routes
-    parent = self.class.where(id: self.parent_id).first
+    parent_site_structure = self.class.where(id: self.parent_id).first
     self.routes =
-        if parent.present?
-          [parent.routes, parent.id].join("-")
+        if parent_site_structure.present?
+          [parent_site_structure.routes, parent_site_structure.id].join("-")
         else
           "0"
         end
   end
 
   def set_depth
-    parent = self.class.where(id: self.parent_id).first
+    parent_site_structure = self.class.where(id: self.parent_id).first
     self.depth =
-        if parent.present?
-          parent.depth + 1
+        if parent_site_structure.present?
+          parent_site_structure.depth + 1
         else
           1
         end
@@ -54,9 +54,9 @@ class Admin::SiteStructure < ActiveRecord::Base
   # instance methods
 
   def contents_title
-    if cate = self.category
-      cate.display_name
-    elsif page = self.page
+    if category
+      category.display_name
+    elsif page
       page.display_name
     else
       raise("カテゴリーもページもありません。")

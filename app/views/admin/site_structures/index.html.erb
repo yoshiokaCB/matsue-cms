@@ -13,15 +13,17 @@
   </thead>
 
   <tbody>
-    <% @admin_site_structures.each do |admin_site_structure| %>
+    <% @admin_site_structures.each do |ss| %>
       <tr>
-        <td><%= admin_site_structure.id %></td>
-        <td><%= raw(contents_title_html(admin_site_structure)) %></td>
-        <td><%= admin_site_structure.sort %></td>
-        <td><%= link_to t('common.show'), admin_site_structure, class: 'btn' %></td>
-        <!--<td><%= link_contents_edit(admin_site_structure) %></td>-->
-        <td><%= link_to(t('common.edit'), admin_site_structure.call_contents, class: 'btn') %></td>
-        <td><%= link_to t('common.destroy'), admin_site_structure.call_contents, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn' %></td>
+        <td><%= ss.id %></td>
+        <td><%= raw(contents_title_html(ss)) %></td>
+        <td><%= ss.sort %></td>
+        <td><%= link_to t('common.show'), ss, class: 'btn' %></td>
+        <td><%= link_to(t('common.edit'), ss.call_contents, class: 'btn') %></td>
+        <td><%= link_to(
+                        t('common.destroy'), ss.call_contents, method: :delete,
+                        data: { confirm: 'Are you sure?' }, class: 'btn'
+                ) %></td>
       </tr>
     <% end %>
   </tbody>

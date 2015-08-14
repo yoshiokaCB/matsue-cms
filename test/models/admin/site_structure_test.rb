@@ -94,7 +94,6 @@ class Admin::SiteStructureTest < ActiveSupport::TestCase
     end
   end
 
-  # TODO コンテンツがcategoryかpageのどちらを含んでいるかを返す
   context "call_contentsのテスト" do
     setup do
       @structure_cate = Admin::SiteStructure.where.not(category_id: nil).first
