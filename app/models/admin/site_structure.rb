@@ -72,4 +72,5 @@ class Admin::SiteStructure < ActiveRecord::Base
     end
   end
 
+
 end

@@ -121,7 +121,6 @@ class Admin::SiteStructureTest < ActiveSupport::TestCase
     children.each do |child|
       assert_equal routes, child.routes
       if Admin::SiteStructure.where(parent_id: child.category.try(:id), page_id: nil).count > 0
-        p child
         check_lower_routes(child)
       end
     end

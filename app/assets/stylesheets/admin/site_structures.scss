@@ -16,3 +16,12 @@ table{
     font-weight: bold;
   }
 }
+.breadcrumb{
+  li{
+    padding-right: 10px;
+  }
+  li:before{
+    content: "/";
+    padding-right: 10px;
+  }
+}

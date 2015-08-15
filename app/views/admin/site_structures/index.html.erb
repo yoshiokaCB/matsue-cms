@@ -1,3 +1,7 @@
+<% @cate_all = Admin::Category.get_all %>
+<div>
+  <%= raw(get_breadcrumbs(params[:category_id].to_i)) %>
+</div>
 <p id="notice"><%= notice %></p>
 
 <h1><%= t('activerecord.attributes.admin/site_structure.index_title') %></h1>

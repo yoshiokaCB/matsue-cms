@@ -56,9 +56,16 @@ class Admin::SiteStructuresHelperTest < ActionView::TestCase
   end
 
   context "get_breadcrumbsのテスト" do
-    test "Stringが返ってくる。" do
-
+    setup do
+      @category = Admin::Category.where(url_name: "markup").first
+      @cate_all = Admin::Category.get_all
     end
+
+    test "Stringが返ってくる。" do
+      breadcrumbs = get_breadcrumbs(@category.id)
+      assert_equal String, breadcrumbs.class
+    end
+
   end
 
 end

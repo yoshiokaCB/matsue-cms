@@ -5,7 +5,9 @@ class Admin::SiteStructuresController < ApplicationController
   # GET /admin/site_structures.json
   def index
     # @admin_site_structures = Admin::SiteStructure.all
-    parent_id = params[:category_id] || 0
+    # parent_id = params[:category_id] || 0
+    site_structure = Admin::SiteStructure.where(id: params[:category_id]).first
+    parent_id      = site_structure.present? ? site_structure.category.id : 0
     @admin_site_structures = Admin::SiteStructure.where(parent_id: parent_id)
   end
 
