@@ -95,6 +95,7 @@ class Admin::PagesController < ApplicationController
               :sort,
               :page_children_count,
               :category_children_count,
+              :is_sub_display_name,
               :_destroy,
           ],
       )

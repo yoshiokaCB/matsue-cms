@@ -80,6 +80,7 @@ service1:
   sort: 0
   children_pages_count: 0
   children_categories_count: 0
+  is_sub_display_name: 0
 service2:
   id: 8
   page_id: 2
@@ -91,6 +92,7 @@ service2:
   sort: 0
   children_pages_count: 0
   children_categories_count: 0
+  is_sub_display_name: 0
 
 work1:
   id: 9
@@ -103,6 +105,7 @@ work1:
   sort: 0
   children_pages_count: 0
   children_categories_count: 0
+  is_sub_display_name: 0
 work2:
   id: 10
   page_id: 4
@@ -114,6 +117,7 @@ work2:
   sort: 0
   children_pages_count: 0
   children_categories_count: 0
+  is_sub_display_name: 0
 
 news1:
   id: 11
@@ -126,6 +130,7 @@ news1:
   sort: 0
   children_pages_count: 0
   children_categories_count: 0
+  is_sub_display_name: 0
 news2:
   id: 12
   page_id: 6
@@ -137,6 +142,7 @@ news2:
   sort: 0
   children_pages_count: 0
   children_categories_count: 0
+  is_sub_display_name: 0
 
 # serviceの下層カテゴリー
 service_lower1:

@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20150718023827) do
     t.integer  "category_primary"
     t.integer  "children_pages_count"
     t.integer  "children_categories_count"
+    t.integer  "is_sub_display_name"
     t.integer  "depth"
     t.integer  "sort"
     t.datetime "created_at",                null: false

@@ -62,7 +62,7 @@ class Admin::SiteStructuresHelperTest < ActionView::TestCase
     end
 
     test "Stringが返ってくる。" do
-      breadcrumbs = get_breadcrumbs(@category.id)
+      breadcrumbs = get_breadcrumbs(@category.site_structure.id)
       assert_equal String, breadcrumbs.class
     end
 

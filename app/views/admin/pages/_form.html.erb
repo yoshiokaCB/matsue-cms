@@ -12,42 +12,47 @@
     </div>
   <% end %>
 
+  <h2>通常設定</h2>
   <div class="field">
     <%= f.label :display_name %><br>
     <%= f.text_field :display_name %>
-  </div>
-  <div class="field">
-    <%= f.label :sub_display_name %><br>
-    <%= f.text_field :sub_display_name %>
-  </div>
-  <div class="field">
-    <%= f.label :url_name %><br>
-    <%= f.text_field :url_name %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
   <div class="field">
+    <%= f.label :body_id %><br>
+    <%= f.number_field :body_id %>
+  </div>
+
+  <h2>表示設定</h2>
+  <div class="field">
     <%= f.label :status %><br>
     <%= f.number_field :status %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.datetime_select :date %>
   </div>
   <div class="field">
     <%= f.label :date_visible %><br>
     <%= f.number_field :date_visible %>
   </div>
   <div class="field">
+    <%= f.label :date %><br>
+    <%= f.text_field :date, class: 'datepicker' %>
+  </div>
+  <div class="field">
     <%= f.label :start_date %><br>
-    <%= f.datetime_select :start_date %>
+    <%= f.text_field :start_date, class: 'datepicker' %>
   </div>
   <div class="field">
     <%= f.label :end_date %><br>
-    <%= f.datetime_select :end_date %>
+    <%= f.text_field :end_date, class: 'datepicker' %>
   </div>
+  <div class="field">
+    <%= f.label :url_name %><br>
+    <%= f.text_field :url_name %>
+  </div>
+
+  <h2>リダイレクト設定</h2>
   <div class="field">
     <%= f.label :redirect_url %><br>
     <%= f.text_field :redirect_url %>
@@ -56,37 +61,39 @@
     <%= f.label :redirect_target %><br>
     <%= f.number_field :redirect_target %>
   </div>
-  <div class="field">
-    <%= f.label :body_id %><br>
-    <%= f.number_field :body_id %>
-  </div>
+
+  <h2>メタ</h2>
   <div class="field">
     <%= f.label :meta_id %><br>
     <%= f.number_field :meta_id %>
   </div>
-  <div class="field">
-    <%= f.label :replace_id %><br>
-    <%= f.number_field :replace_id %>
-  </div>
-  <div class="field">
-    <%= f.label :lock_version %><br>
-    <%= f.number_field :lock_version %>
-  </div>
+
+
+  <h2>カテゴリー登録</h2>
   <div class="field">
     <%= f.label :site_structure_attributes %><br>
     <% site_structures = @admin_page.site_structures %>
     <% site_structures.each do |obj| %>
       <%= f.fields_for :site_structures, obj, :wrapper => false do |ssf| %>
         <div id="site_structures_wrp">
+          <%= ssf.label :parent_id %>
           <%= ssf.number_field :parent_id %>
+          <%= ssf.label :is_sub_display_name %>
+          <%= ssf.number_field :is_sub_display_name %>
+          <%= ssf.label :_destroy %>
           <%= ssf.check_box :_destroy, class: "btn" %>
         </div>
       <% end %>
     <% end %>
     <p><%= f.link_to_add t("activerecord.attributes.admin/page.add_page_tag"), :site_structures, "data-target" => "#site_structures_wrp", class: "btn" %></p>
   </div>
+  <div class="field">
+    <%= f.label :sub_display_name %><br>
+    <%= f.text_field :sub_display_name %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
