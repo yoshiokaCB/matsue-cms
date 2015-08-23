@@ -29,7 +29,7 @@ class Admin::PagesController < ApplicationController
 
     respond_to do |format|
       if @admin_page.save
-        format.html { redirect_to @admin_page, notice: 'Page was successfully created.' }
+        format.html { redirect_to edit_admin_page_path(@admin_page), notice: 'Page was successfully created.' }
         format.json { render :show, status: :created, location: @admin_page }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class Admin::PagesController < ApplicationController
   def update
     respond_to do |format|
       if @admin_page.update(admin_page_params)
-        format.html { redirect_to @admin_page, notice: 'Page was successfully updated.' }
+        format.html { redirect_to edit_admin_page_path(@admin_page), notice: 'Page was successfully updated.' }
         format.json { render :show, status: :ok, location: @admin_page }
       else
         format.html { render :edit }

@@ -60,5 +60,5 @@ end
 
 gem 'nested_form'
 gem "less-rails"
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', '>=3.2.0'
 

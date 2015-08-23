@@ -1,4 +1,7 @@
 <%= form_for(@admin_category) do |f| %>
+
+  <p id="notice"><%= notice %></p>
+
   <% if @admin_category.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@admin_category.errors.count, "error") %> prohibited this admin_category from being saved:</h2>
@@ -11,6 +14,7 @@
     </div>
   <% end %>
 
+  <h2>通常設定</h2>
   <div class="field">
     <%= f.label :display_name %><br>
     <%= f.text_field :display_name %>
@@ -24,6 +28,12 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
+    <%= f.label :default_body_id %><br>
+    <%= f.number_field :default_body_id %>
+  </div>
+
+  <h2>表示設定</h2>
+  <div class="field">
     <%= f.label :status %><br>
     <%= f.number_field :status %>
   </div>
@@ -35,6 +45,9 @@
     <%= f.label :date_visible %><br>
     <%= f.number_field :date_visible %>
   </div>
+
+
+  <h2>下層(tree)の表示設定</h2>
   <div class="field">
     <%= f.label :tree_type %><br>
     <%= f.number_field :tree_type %>
@@ -43,19 +56,14 @@
     <%= f.label :body_id %><br>
     <%= f.number_field :body_id %>
   </div>
-  <div class="field">
-    <%= f.label :default_body_id %><br>
-    <%= f.number_field :default_body_id %>
-  </div>
+
+  <h2>その他</h2>
   <div class="field">
     <%= f.label :meta_id %><br>
     <%= f.number_field :meta_id %>
   </div>
-  <div class="field">
-    <%= f.label :lock_version %><br>
-    <%= f.number_field :lock_version %>
-  </div>
 
+  <h2>親カテゴリー設定</h2>
   <div class="field">
     <%= f.label :site_structure_attributes %><br>
     <% site_structures = @admin_category.site_structure %>
@@ -66,7 +74,6 @@
     <% end %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= render(partial: "admin/sharded/footer", locals: {form: f, back: admin_site_structures_path, preview: "" }) %>
+
 <% end %>

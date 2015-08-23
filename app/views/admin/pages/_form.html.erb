@@ -1,13 +1,15 @@
 <%= nested_form_for(@admin_page) do |f| %>
 
-    <% if @admin_page.errors.any? %>
+  <p id="notice"><%= notice %></p>
+
+  <% if @admin_page.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@admin_page.errors.count, "error") %> prohibited this admin_page from being saved:</h2>
 
       <ul>
-      <% @admin_page.errors.full_messages.each do |message| %>
+        <% @admin_page.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -92,8 +94,6 @@
     <%= f.text_field :sub_display_name %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= render(partial: "admin/sharded/footer", locals: {form: f, back: admin_site_structures_path, preview: "" }) %>
 
 <% end %>

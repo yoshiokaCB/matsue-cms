@@ -1,0 +1,17 @@
+<%
+   form    ||= nil
+   preview ||= nil
+   back    ||= nil
+%>
+
+<ul>
+  <% if form.present? %>
+  <li><%= form.submit %></li>
+  <% end %>
+  <% if preview.present? %>
+  <li><%= link_to('Show', preview) %></li>
+  <% end %>
+  <% if back.present? %>
+  <li><%= link_to 'Back', back %></li>
+  <% end %>
+</ul>
