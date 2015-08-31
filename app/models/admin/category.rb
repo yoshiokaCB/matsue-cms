@@ -16,6 +16,18 @@ class Admin::Category < ActiveRecord::Base
       return categories_all
     end
 
+    def get_select_list(id)
+      @categories_all ||= self.get_all
+      cate_list_ary = []
+      cates         = Admin::SiteStructure.where(parent_id: id).where(page_id: nil)
+      cates.each do |cate|
+        category = @categories_all[cate.category_id]
+        cate_list_ary << [category.display_name, category.id]
+      end
+      return cate_list_ary
+
+    end
+
   end
 
 end
