@@ -85,7 +85,7 @@ news:
   lock_version: 0
 
 # serviceの下層カテゴリー
-service_lower1:
+service_website:
   id: 7
   display_name: WebSite
   url_name: website
@@ -98,7 +98,7 @@ service_lower1:
   default_body_id: 1
   meta_id: 1
   lock_version: 0
-service_lower2:
+service_system:
   id: 8
   display_name: System
   url_name: system
@@ -111,7 +111,7 @@ service_lower2:
   default_body_id: 1
   meta_id: 1
   lock_version: 0
-service_lower3:
+service_server:
   id: 9
   display_name: Server
   url_name: server
@@ -124,7 +124,7 @@ service_lower3:
   default_body_id: 1
   meta_id: 1
   lock_version: 0
-service_lower1_lower1:
+service_website_design:
   id: 10
   display_name: Design
   url_name: design
@@ -137,7 +137,7 @@ service_lower1_lower1:
   default_body_id: 1
   meta_id: 1
   lock_version: 0
-service_lower1_lower2:
+service_website_markup:
   id: 11
   display_name: Markup
   url_name: markup

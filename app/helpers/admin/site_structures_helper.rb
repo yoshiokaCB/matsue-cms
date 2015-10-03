@@ -38,12 +38,13 @@ module Admin::SiteStructuresHelper
       routes_id_ary = routes.split("-").map(&:to_i)
       routes_id_ary.shift
       routes_id_ary.each do |routes_id|
-        cate      = @cate_all[routes_id]
+        cate      = @cate_all[routes_id.to_s]
         link_text = link_to(cate.display_name, admin_category_site_structures_path(routes_id))
         html     << %*<li>#{link_text}</li>*
       end
       html << %*<li class="active">#{site_structure.category.display_name}</li>*
     end
+
     html << "</ol>"
 
     return html

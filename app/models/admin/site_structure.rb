@@ -9,6 +9,13 @@ class Admin::SiteStructure < ActiveRecord::Base
   after_save    :set_lower, :set_children_count
   after_destroy :set_children_count
 
+  scope :same_hierarchical_structure_categories, lambda { |parent_id|
+                                                 where(parent_id: parent_id).where(page_id: nil)
+                                               }
+  scope :default_order,lambda {
+                        order("sort DESC, ID")
+                      }
+
   def set_def
     self.sort = 0
     self.children_categories_count = 0

@@ -78,7 +78,7 @@
       <%= f.fields_for :site_structures, obj, :wrapper => false do |ssf| %>
         <div id="site_structures_wrp">
           <%= ssf.label :parent_id %>
-          <%= ssf.number_field :parent_id %>
+          <%#= ssf.number_field :parent_id %>
           <%= ssf.select :parent_id, Admin::Category.get_select_list(0) %>
           <%= ssf.label :is_sub_display_name %>
           <%= ssf.number_field :is_sub_display_name %>
