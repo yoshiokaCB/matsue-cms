@@ -30,12 +30,13 @@
 
   <h2>表示設定</h2>
   <div class="field">
-    <%= f.label :status %><br>
-    <%= f.number_field :status %>
-  </div>
-  <div class="field">
     <%= f.label :date_visible %><br>
-    <%= f.number_field :date_visible %>
+    <%= select_date_visible_for_page(f) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= select_status_for_page(f) %>
   </div>
 
   <div class="field well">

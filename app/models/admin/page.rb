@@ -4,4 +4,13 @@ class Admin::Page < ActiveRecord::Base
 
   accepts_nested_attributes_for :site_structures, allow_destroy: true
 
+  StatusValue = {
+      invisible: 0, # 非公開
+      visible: 1,   # 公開
+  }
+  DateVisible = {
+      invisible: 0, # 非表示
+      visible: 1,   # 表示
+  }
+
 end

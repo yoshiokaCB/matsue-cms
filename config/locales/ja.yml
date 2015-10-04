@@ -29,6 +29,13 @@ ja:
     am: "午前"
     pm: "午後"
 
+  status:
+    invisible: 非公開
+    visible: 公開
+  date_visible:
+    invisible: 非表示
+    visible: 表示
+
   activerecord:
     attributes:
       admin/page:
