@@ -17,3 +17,10 @@
 //= require_tree .
 //= require jquery_nested_form
 
+//= require bootstrap-datetimepicker
+
+
+var date_format = {'format': 'yyyy-MM-dd hh:mm:ss' };
+$(function(){
+  $('.datetimepicker').datetimepicker( date_format );
+});

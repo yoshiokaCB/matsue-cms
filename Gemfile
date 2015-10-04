@@ -60,4 +60,5 @@ end
 
 gem 'nested_form'
 gem 'twitter-bootstrap-rails', '=2.2.8'
+gem 'bootstrap-datetimepicker-rails'
 

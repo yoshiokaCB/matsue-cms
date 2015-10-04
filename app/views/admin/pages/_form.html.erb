@@ -37,18 +37,29 @@
     <%= f.label :date_visible %><br>
     <%= f.number_field :date_visible %>
   </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.text_field :date, class: 'datepicker' %>
+
+  <div class="field well">
+    <div class="datetimepicker" class="input-append date">
+      <%= f.label :date %><br>
+      <%= f.text_field :date %>
+      <span class="add-on"><i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :start_date %><br>
-    <%= f.text_field :start_date, class: 'datepicker' %>
+  <div class="field well">
+    <div class="datetimepicker" class="input-append date">
+      <%= f.label :start_date %><br>
+      <%= f.text_field :start_date %>
+      <span class="add-on"><i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :end_date %><br>
-    <%= f.text_field :end_date, class: 'datepicker' %>
+  <div class="field well">
+    <div class="datetimepicker" class="input-append date">
+      <%= f.label :end_date %><br>
+      <%= f.text_field :end_date %>
+      <span class="add-on"><i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+    </div>
   </div>
+
   <div class="field">
     <%= f.label :url_name %><br>
     <%= f.text_field :url_name %>
@@ -97,3 +108,12 @@
   <%= render(partial: "admin/sharded/footer", locals: {form: f, back: admin_site_structures_path, preview: "" }) %>
 
 <% end %>
+
+<div class="well">
+  <div class="datetimepicker1" class="input-append date">
+    <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
+    <span class="add-on">
+      <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+    </span>
+  </div>
+</div>
