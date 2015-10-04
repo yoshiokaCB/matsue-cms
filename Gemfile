@@ -52,7 +52,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'simplecov', :require=>false
+  gem 'simplecov'#, :require=>false
   gem 'test-unit-rails'
   gem 'test-unit-context'
   gem 'capybara'
