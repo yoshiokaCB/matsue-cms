@@ -42,6 +42,10 @@ ja:
 
         new_title: ページ新規登録
         edit_title: ページ編集
+        add_category: カテゴリー追加
+
+        date_prompt: 日付を選択
+        status_prompt: ページの状態選択
 
         display_name: ページタイトル
         sub_display_name: サブタイトル

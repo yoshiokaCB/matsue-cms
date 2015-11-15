@@ -52,7 +52,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'simplecov'#, :require=>false
+  gem 'simplecov'
   gem 'test-unit-rails'
   gem 'test-unit-context'
   gem 'capybara'
@@ -61,4 +61,6 @@ end
 gem 'nested_form'
 gem 'twitter-bootstrap-rails', '=2.2.8'
 gem 'bootstrap-datetimepicker-rails'
+gem 'simple_form'
+gem 'jquery-turbolinks'
 

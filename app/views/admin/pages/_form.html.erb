@@ -1,4 +1,4 @@
-<%= nested_form_for(@admin_page) do |f| %>
+<%= simple_nested_form_for(@admin_page) do |f| %>
 
   <p id="notice"><%= notice %></p>
 
@@ -16,37 +16,29 @@
 
   <h2>通常設定</h2>
   <div class="field">
-    <%= f.label :display_name %><br>
-    <%= f.text_field :display_name %>
+    <%= f.input :display_name %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.input :description %>
   </div>
   <div class="field">
-    <%= f.label :body_id %><br>
-    <%= f.number_field :body_id %>
+    <%= f.input :body_id %>
   </div>
 
   <h2>表示設定</h2>
 
   <div class="field">
-    <%= f.label :date_visible %><br>
-    <%= select_date_visible_for_page(f) %>
-  </div>
-  <div class="field well">
-    <div class="datetimepicker" class="input-append date">
-      <%= f.label :date %><br>
-      <%= f.text_field :date %>
-      <span class="add-on"><i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
-    </div>
+    <%= f.input(
+                :status,
+                prompt: t("activerecord.attributes.admin/page.status_prompt"),
+                collection: [
+                        [t('status.invisible'), Admin::Page::StatusValue[:invisible]],
+                        [t('status.visible'), Admin::Page::StatusValue[:visible]],
+                ]
+        ) %>
   </div>
 
-
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= select_status_for_page(f) %>
-  </div>
+  <!--
   <div class="field well">
     <div class="datetimepicker" class="input-append date">
       <%= f.label :start_date %><br>
@@ -61,20 +53,38 @@
       <span class="add-on"><i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
     </div>
   </div>
+  -->
 
   <div class="field">
-    <%= f.label :url_name %><br>
-    <%= f.text_field :url_name %>
+    <%= f.input(
+                :date_visible,
+                prompt: t("activerecord.attributes.admin/page.date_prompt"),
+                collection: [
+                        [t('date_visible.invisible'), Admin::Page::DateVisible[:invisible]],
+                        [t('date_visible.visible'), Admin::Page::DateVisible[:visible]],
+                ]
+        ) %>
+  </div>
+
+  <div class="field well">
+    <div class="datetimepicker" class="input-append date">
+      <%= f.label :date %><br>
+      <%= f.text_field :date %>
+      <span class="add-on"><i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.input :url_name %><br>
   </div>
 
   <h2>リダイレクト設定</h2>
   <div class="field">
-    <%= f.label :redirect_url %><br>
-    <%= f.text_field :redirect_url %>
+    <%= f.input :redirect_url %>
   </div>
   <div class="field">
-    <%= f.label :redirect_target %><br>
-    <%= f.number_field :redirect_target %>
+    <%= f.label :redirect_target %>
+    <%= f.collection_radio_buttons :redirect_target, [[0, 'self'] ,[1, 'blank']], :first, :last %>
   </div>
 
   <h2>メタ</h2>
@@ -88,23 +98,30 @@
   <div class="field">
     <% site_structures = @admin_page.site_structures %>
     <% site_structures.each do |obj| %>
-      <%= f.fields_for :site_structures, obj, :wrapper => false do |ssf| %>
+      <%= f.simple_fields_for :site_structures, obj, :wrapper => false do |ssf| %>
         <div id="site_structures_wrp">
-          <%= ssf.label :parent_id %>
-          <%#= ssf.number_field :parent_id %>
-          <%= ssf.select :parent_id, Admin::Category.get_select_list(0) %>
-          <%= ssf.label :is_sub_display_name %>
-          <%= ssf.number_field :is_sub_display_name %>
-          <%= ssf.label :_destroy %>
-          <%= ssf.check_box :_destroy, class: "btn" %>
+
+          <div class="well">
+            <%= ssf.label :parent_id %>
+            <%= ssf.select :parent_id, Admin::Category.get_select_list(0) %>
+            <div>
+              <%= ssf.input_field :is_sub_display_name, as: :boolean %>
+              <%= ssf.label :is_sub_display_name %>
+              <%#= ssf.number_field :is_sub_display_name %>
+            </div>
+            <div>
+              <%= ssf.check_box :_destroy, class: "btn" %>
+              <%= ssf.label :_destroy %>
+            </div>
+          </div>
+
         </div>
       <% end %>
     <% end %>
-    <p><%= f.link_to_add t("activerecord.attributes.admin/page.add_page_tag"), :site_structures, "data-target" => "#site_structures_wrp", class: "btn" %></p>
+    <p><%= f.link_to_add t("activerecord.attributes.admin/page.add_category"), :site_structures, "data-target" => "#site_structures_wrp", class: "btn" %></p>
   </div>
   <div class="field">
-    <%= f.label :sub_display_name %><br>
-    <%= f.text_field :sub_display_name %>
+    <%= f.input :sub_display_name %><br>
   </div>
 
   <%= render(partial: "admin/sharded/footer", locals: {form: f, back: admin_site_structures_path, preview: "" }) %>

@@ -9,7 +9,7 @@ class Admin::SiteStructure < ActiveRecord::Base
   after_save    :set_lower, :set_children_count
   after_destroy :set_children_count
 
-  scope :same_hierarchical_structure_categories, lambda { |parent_id|
+  scope :same_tree_structure_categories, lambda { |parent_id|
                                                  where(parent_id: parent_id).where(page_id: nil)
                                                }
   scope :default_order,lambda {

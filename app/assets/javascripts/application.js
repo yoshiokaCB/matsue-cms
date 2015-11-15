@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require jquery.turbolinks
 //= require turbolinks
 //= require_tree .
 //= require jquery_nested_form
@@ -20,7 +21,3 @@
 //= require bootstrap-datetimepicker
 
 
-var date_format = {'format': 'yyyy-MM-dd hh:mm:ss UTC' };
-$(function(){
-  $('.datetimepicker').datetimepicker( date_format );
-});

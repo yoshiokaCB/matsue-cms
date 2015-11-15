@@ -19,7 +19,7 @@ class Admin::Category < ActiveRecord::Base
     def get_select_list(id)
       @categories_all ||= self.get_all
       cate_list_ary = []
-      structures    = Admin::SiteStructure.same_hierarchical_structure_categories(id).default_order
+      structures    = Admin::SiteStructure.same_tree_structure_categories(id).default_order
       structures.each do |struct|
         category = @categories_all[struct.category_id.to_s]
         name = ("　"*struct.depth.to_i).to_s + category.display_name

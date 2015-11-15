@@ -13,4 +13,9 @@ class Admin::Page < ActiveRecord::Base
       visible: 1,   # 表示
   }
 
+  def set_default_value
+    self.status       ||= StatusValue[:invisible]
+    self.date_visible ||= DateVisible[:invisible]
+  end
+
 end

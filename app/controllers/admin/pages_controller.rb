@@ -15,6 +15,7 @@ class Admin::PagesController < ApplicationController
   # GET /admin/pages/new
   def new
     @admin_page = Admin::Page.new
+    @admin_page.set_default_value
     @admin_page.site_structures.build
   end
 
