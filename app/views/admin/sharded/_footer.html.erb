@@ -6,12 +6,12 @@
 
 <ul>
   <% if form.present? %>
-  <li><%= form.submit %></li>
+  <li><%= form.submit({class: "btn"})%></li>
   <% end %>
   <% if preview.present? %>
-  <li><%= link_to('Show', preview) %></li>
+  <li><%= link_to('Show', preview, class: "btn") %></li>
   <% end %>
   <% if back.present? %>
-  <li><%= link_to 'Back', back %></li>
+  <li><%= link_to('Back', back, class: "btn") %></li>
   <% end %>
 </ul>

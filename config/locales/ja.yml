@@ -77,6 +77,7 @@ ja:
 
         index_title: コンテンツ一覧
         contents_title: タイトル
+
         sort: 表示順
         parent_id: 所属カテゴリー
         is_sub_display_name: サブタイトルを使う

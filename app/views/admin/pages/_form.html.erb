@@ -29,22 +29,23 @@
   </div>
 
   <h2>表示設定</h2>
+
   <div class="field">
     <%= f.label :date_visible %><br>
     <%= select_date_visible_for_page(f) %>
   </div>
-
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= select_status_for_page(f) %>
-  </div>
-
   <div class="field well">
     <div class="datetimepicker" class="input-append date">
       <%= f.label :date %><br>
       <%= f.text_field :date %>
       <span class="add-on"><i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
     </div>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= select_status_for_page(f) %>
   </div>
   <div class="field well">
     <div class="datetimepicker" class="input-append date">
@@ -110,11 +111,3 @@
 
 <% end %>
 
-<div class="well">
-  <div class="datetimepicker1" class="input-append date">
-    <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
-    <span class="add-on">
-      <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
-    </span>
-  </div>
-</div>
