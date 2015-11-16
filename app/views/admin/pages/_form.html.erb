@@ -31,10 +31,7 @@
     <%= f.input(
                 :status,
                 prompt: t("activerecord.attributes.admin/page.status_prompt"),
-                collection: [
-                        [t('status.invisible'), Settings.page.status.invisible],
-                        [t('status.visible'), Settings.page.status.visible],
-                ]
+                collection: [ [t('status.invisible'), Settings.page.status.invisible], [t('status.visible'), Settings.page.status.visible], ]
         ) %>
   </div>
 
@@ -59,10 +56,7 @@
     <%= f.input(
                 :date_visible,
                 prompt: t("activerecord.attributes.admin/page.date_prompt"),
-                collection: [
-                        [t('date_visible.invisible'), Settings.page.date_visible.false],
-                        [t('date_visible.visible'), Settings.page.date_visible.true],
-                ]
+                collection: [ [t('date_visible.invisible'), Settings.page.date_visible.false], [t('date_visible.visible'), Settings.page.date_visible.true], ]
         ) %>
   </div>
 
@@ -84,7 +78,7 @@
   </div>
   <div class="field">
     <%= f.label :redirect_target %>
-    <%= f.collection_radio_buttons :redirect_target, [[0, 'self'] ,[1, 'blank']], :first, :last %>
+    <%= f.collection_radio_buttons :redirect_target, [[Settings.page.redirect_target.self, t("activerecord.attributes.admin/page.redirect.self")] ,[Settings.page.redirect_target.blank, t("activerecord.attributes.admin/page.redirect.blank")]], :first, :last %>
   </div>
 
   <h2>メタ</h2>

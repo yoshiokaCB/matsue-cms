@@ -47,6 +47,10 @@ ja:
         date_prompt: 日付を選択
         status_prompt: ページの状態選択
 
+        redirect:
+          blank: 新規ウィンドウ
+          self: 同じウィンドウ
+
         display_name: ページタイトル
         sub_display_name: サブタイトル
         url_name: url名
