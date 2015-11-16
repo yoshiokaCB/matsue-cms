@@ -4,18 +4,9 @@ class Admin::Page < ActiveRecord::Base
 
   accepts_nested_attributes_for :site_structures, allow_destroy: true
 
-  StatusValue = {
-      invisible: 0, # 非公開
-      visible: 1,   # 公開
-  }
-  DateVisible = {
-      invisible: 0, # 非表示
-      visible: 1,   # 表示
-  }
-
   def set_default_value
-    self.status       ||= StatusValue[:invisible]
-    self.date_visible ||= DateVisible[:invisible]
+    self.status       ||= Settings.page.status.invisible
+    self.date_visible ||= Settings.page.date_visible.false
   end
 
 end

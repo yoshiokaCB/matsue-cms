@@ -32,8 +32,8 @@
                 :status,
                 prompt: t("activerecord.attributes.admin/page.status_prompt"),
                 collection: [
-                        [t('status.invisible'), Admin::Page::StatusValue[:invisible]],
-                        [t('status.visible'), Admin::Page::StatusValue[:visible]],
+                        [t('status.invisible'), Settings.page.status.invisible],
+                        [t('status.visible'), Settings.page.status.visible],
                 ]
         ) %>
   </div>
@@ -60,8 +60,8 @@
                 :date_visible,
                 prompt: t("activerecord.attributes.admin/page.date_prompt"),
                 collection: [
-                        [t('date_visible.invisible'), Admin::Page::DateVisible[:invisible]],
-                        [t('date_visible.visible'), Admin::Page::DateVisible[:visible]],
+                        [t('date_visible.invisible'), Settings.page.date_visible.false],
+                        [t('date_visible.visible'), Settings.page.date_visible.true],
                 ]
         ) %>
   </div>

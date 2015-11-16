@@ -1,0 +1,9 @@
+page:
+  status:
+    invisible: 0
+    visible: 1
+  date_visible:
+    false: 0
+    true: 1
+category:
+site_structure:
