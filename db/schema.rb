@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20150718023827) do
     t.datetime "end_date"
     t.string   "redirect_url"
     t.integer  "redirect_target"
+    t.text     "body_text"
     t.integer  "body_id"
     t.integer  "meta_id"
     t.integer  "replace_id"

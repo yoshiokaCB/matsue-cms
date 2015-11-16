@@ -84,6 +84,7 @@ class Admin::PagesController < ApplicationController
           :redirect_url,
           :redirect_target,
           :body_id,
+          :body_text,
           :meta_id,
           :replace_id,
           :lock_version,
