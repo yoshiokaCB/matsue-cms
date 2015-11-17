@@ -19,5 +19,6 @@
 //= require jquery_nested_form
 
 //= require bootstrap-datetimepicker
+//= require ckeditor/init
 
 

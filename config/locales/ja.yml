@@ -62,6 +62,7 @@ ja:
         end_date: 公開終了日
         redirect_url: リンクURL
         redirect_target: ターゲット
+        body_text: 本文
         body_id: 本文
         meta_id: メタ
 
