@@ -1,4 +1,9 @@
 ja:
+  helpers:
+    submit:
+      create: "登録する"
+      update: "更新する"
+      submit: "登録する"
   common:
     show: 確認
     new: 新規登録
