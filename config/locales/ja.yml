@@ -1,4 +1,12 @@
 ja:
+  ckeditor:
+    page_title: 'CKEditor Files Manager'
+    confirm_delete: 'Delete file?'
+    buttons:
+      cancel: 'Cancel'
+      upload: 'Upload'
+      delete: 'Delete'
+      next: 'Next'
   helpers:
     submit:
       create: "登録する"
@@ -40,6 +48,9 @@ ja:
   date_visible:
     invisible: 非表示
     visible: 表示
+  footer:
+    preview: プレビュー
+    back: 一覧へ戻る
 
   activerecord:
     attributes:

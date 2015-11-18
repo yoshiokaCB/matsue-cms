@@ -4,14 +4,14 @@
    back    ||= nil
 %>
 
-<ul>
+<ul class="footer_navi_wrp">
   <% if form.present? %>
   <li><%= form.submit({class: "btn"})%></li>
   <% end %>
   <% if preview.present? %>
-  <li><%= link_to('Show', preview, class: "btn") %></li>
+  <li><%= link_to(t("footer.preview"), preview, class: "btn") %></li>
   <% end %>
   <% if back.present? %>
-  <li><%= link_to('Back', back, class: "btn") %></li>
+  <li><%= link_to(t("footer.back"), back, class: "btn") %></li>
   <% end %>
 </ul>

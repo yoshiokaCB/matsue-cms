@@ -71,3 +71,12 @@ div {
     list-style: square;
   }
 }
+ul.footer_navi_wrp{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  li{
+    display: inline;
+    margin-right: 10px;
+  }
+}

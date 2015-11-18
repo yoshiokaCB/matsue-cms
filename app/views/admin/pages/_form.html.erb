@@ -23,7 +23,9 @@
   </div>
   <div class="field">
     <%= f.label :body_text %>
-    <%= f.cktext_area :body_text %>
+    <%#= f.cktext_area :body_text %>
+    <%#= f.input :body_text, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} } %>
+    <%= f.input :body_text, as: :ckeditor %>
   </div>
   <!--
   <div class="field">
