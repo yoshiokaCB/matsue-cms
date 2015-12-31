@@ -21,8 +21,11 @@
   <div class="field">
     <%= f.input :description %>
   </div>
+    <% # TODO ckeditorのカスタマイズのための設定は完了。 %>
+    <% # TODO リロードしないとckeditorが読み込まれない問題の解決が必要。 %>
   <div class="field">
     <%= f.input :body_text, as: :ckeditor %>
+    <%#= f.cktext_area :body_text, :id => 'sometext', ckeditor: { :toolbar => 'mini'} %>
   </div>
   <!--
   <div class="field">

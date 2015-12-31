@@ -15,10 +15,11 @@
 //= require twitter/bootstrap
 //= require jquery.turbolinks
 //= require turbolinks
-//= require_tree .
 //= require jquery_nested_form
 
 //= require bootstrap-datetimepicker
 //= require ckeditor/init
+
+//= require_tree .
 
 
