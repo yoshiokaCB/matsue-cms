@@ -13,12 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require ckeditor/init
+
 //= require jquery.turbolinks
 //= require turbolinks
 //= require jquery_nested_form
-
 //= require bootstrap-datetimepicker
-//= require ckeditor/init
 
 //= require_tree .
 
