@@ -1,10 +1,11 @@
-page:
+common:
   status:
     invisible: 0
     visible: 1
   date_visible:
     false: 0
     true: 1
+page:
   redirect_target:
     self: 0
     blank: 1

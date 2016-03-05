@@ -1,79 +1,91 @@
-<%= form_for(@admin_category) do |f| %>
+<% # TODO 「状態、表示選択、親カテゴリー選択」をそれぞれselectボタンに変更する。 %>
+<%= simple_nested_form_for(@admin_category) do |f| %>
 
-  <p id="notice"><%= notice %></p>
+    <p id="notice"><%= notice %></p>
 
-  <% if @admin_category.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@admin_category.errors.count, "error") %> prohibited this admin_category from being saved:</h2>
+    <% if @admin_category.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@admin_category.errors.count, "error") %> prohibited this admin_category from being saved:</h2>
 
-      <ul>
-      <% @admin_category.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <h2>通常設定</h2>
-  <div class="field">
-    <%= f.label :display_name %><br>
-    <%= f.text_field :display_name %>
-  </div>
-  <div class="field">
-    <%= f.label :url_name %><br>
-    <%= f.text_field :url_name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :default_body_id %><br>
-    <%= f.number_field :default_body_id %>
-  </div>
-
-  <h2>表示設定</h2>
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.number_field :status %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.datetime_select :date %>
-  </div>
-  <div class="field">
-    <%= f.label :date_visible %><br>
-    <%= f.number_field :date_visible %>
-  </div>
-
-
-  <h2>下層(tree)の表示設定</h2>
-  <div class="field">
-    <%= f.label :tree_type %><br>
-    <%= f.number_field :tree_type %>
-  </div>
-  <div class="field">
-    <%= f.label :body_id %><br>
-    <%= f.number_field :body_id %>
-  </div>
-
-  <h2>その他</h2>
-  <div class="field">
-    <%= f.label :meta_id %><br>
-    <%= f.number_field :meta_id %>
-  </div>
-
-  <h2>親カテゴリー設定</h2>
-  <div class="field">
-    <%= f.label :site_structure_attributes %><br>
-    <% site_structures = @admin_category.site_structure %>
-    <%= f.fields_for :site_structure, site_structures, :wrapper => false do |ssf| %>
-      <div id="site_structures_wrp">
-        <%= ssf.number_field :parent_id %>
-      </div>
+          <ul>
+            <% @admin_category.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
     <% end %>
-  </div>
 
-  <%= render(partial: "admin/sharded/footer", locals: {form: f, back: admin_site_structures_path, preview: "" }) %>
+    <h2>通常設定</h2>
+    <div class="field">
+      <%= f.label :display_name %><br>
+      <%= f.text_field :display_name %>
+    </div>
+    <div class="field">
+      <%= f.label :url_name %><br>
+      <%= f.text_field :url_name %>
+    </div>
+    <div class="field">
+      <%= f.label :description %><br>
+      <%= f.text_area :description %>
+    </div>
+    <div class="field">
+      <%= f.label :default_body_id %><br>
+      <%= f.number_field :default_body_id %>
+    </div>
+
+    <h2>表示設定</h2>
+    <div class="field">
+      <%= f.input(
+              :status,
+              prompt: t("common.status_prompt"),
+              collection: status_collection
+          ) %>
+    </div>
+
+    <div class="field well">
+      <%= f.input(
+              :date_visible,
+              prompt: t("activerecord.attributes.admin/page.date_prompt"),
+              collection: date_visible_collection
+          ) %>
+      <div class="datetimepicker" class="input-append date">
+        <%= f.label :date %><br>
+        <%= f.text_field :date %>
+        <span class="add-on"><i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+      </div>
+    </div>
+
+    <h2>下層(tree)の表示設定</h2>
+    <div class="field">
+      <%= f.label :tree_type %><br>
+      <%= f.number_field :tree_type %>
+    </div>
+    <div class="field">
+      <%= f.label :body_id %><br>
+      <%= f.number_field :body_id %>
+    </div>
+
+    <h2>その他</h2>
+    <div class="field">
+      <%= f.label :meta_id %><br>
+      <%= f.number_field :meta_id %>
+    </div>
+
+    <h2>親カテゴリー設定</h2>
+    <div class="field">
+      <%= f.label :site_structure_attributes %><br>
+      <% site_structures = @admin_category.site_structure %>
+      <%= f.fields_for :site_structure, site_structures, :wrapper => false do |ssf| %>
+          <div class="well">
+            <%= ssf.label :parent_id %>
+            <%= ssf.select :parent_id, Admin::Category.get_select_list(0) %>
+          </div>
+          <div id="site_structures_wrp">
+            <%#= ssf.number_field :parent_id %>
+          </div>
+      <% end %>
+    </div>
+
+    <%= render(partial: "admin/sharded/footer", locals: {form: f, back: admin_site_structures_path, preview: "" }) %>
 
 <% end %>

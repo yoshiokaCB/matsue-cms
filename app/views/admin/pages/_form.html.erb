@@ -38,8 +38,8 @@
   <div class="field">
     <%= f.input(
                 :status,
-                prompt: t("activerecord.attributes.admin/page.status_prompt"),
-                collection: [ [t('status.invisible'), Settings.page.status.invisible], [t('status.visible'), Settings.page.status.visible], ]
+                prompt: t("common.status_prompt"),
+                collection: status_collection
         ) %>
   </div>
 
@@ -61,14 +61,14 @@
   -->
 
   <div class="field">
-    <%= f.input(
-                :date_visible,
-                prompt: t("activerecord.attributes.admin/page.date_prompt"),
-                collection: [ [t('date_visible.invisible'), Settings.page.date_visible.false], [t('date_visible.visible'), Settings.page.date_visible.true], ]
-        ) %>
   </div>
 
   <div class="field well">
+    <%= f.input(
+            :date_visible,
+            prompt: t("common.date_prompt"),
+            collection: date_visible_collection
+        ) %>
     <div class="datetimepicker" class="input-append date">
       <%= f.label :date %><br>
       <%= f.text_field :date %>

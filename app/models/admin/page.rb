@@ -5,8 +5,8 @@ class Admin::Page < ActiveRecord::Base
   accepts_nested_attributes_for :site_structures, allow_destroy: true
 
   def set_default_value
-    self.status       ||= Settings.page.status.invisible
-    self.date_visible ||= Settings.page.date_visible.false
+    self.status       ||= Settings.common.status.invisible
+    self.date_visible ||= Settings.common.date_visible.false
   end
 
 end

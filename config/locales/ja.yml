@@ -21,6 +21,9 @@ ja:
     destroy: 削除
     back: 戻る
 
+    date_prompt: 日付を選択
+    status_prompt: ページの状態選択
+
   date:
     formats:
       default: "%Y/%m/%d"
@@ -59,9 +62,6 @@ ja:
         new_title: ページ新規登録
         edit_title: ページ編集
         add_category: カテゴリー追加
-
-        date_prompt: 日付を選択
-        status_prompt: ページの状態選択
 
         redirect:
           blank: 新規ウィンドウ
