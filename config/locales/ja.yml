@@ -98,6 +98,8 @@ ja:
         tree_type: 下層リストの表示選択
         meta_id: メタ
 
+        root_category: ルートカテゴリー
+
       admin/site_structure:
 
         index_title: コンテンツ一覧

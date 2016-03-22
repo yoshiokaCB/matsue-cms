@@ -79,5 +79,8 @@ class Admin::SiteStructure < ActiveRecord::Base
     end
   end
 
+  def has_category_children?
+  end
+
 
 end

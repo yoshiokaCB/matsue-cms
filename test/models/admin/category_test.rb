@@ -43,4 +43,16 @@ class Admin::CategoryTest < ActiveSupport::TestCase
     end
   end
 
+  # TODO テストを書く。
+  context "セレクトフィールド用のカテゴリー一覧を返す（カテゴリー用）" do
+    setup do
+      category = admin_categories(:about)
+      @select_list = category.get_category_select_list(0)
+    end
+    test "カテゴリー自身は読み込まない" do
+    end
+    test "カテゴリー自身よりも下層は読み込まない" do
+    end
+  end
+
 end
