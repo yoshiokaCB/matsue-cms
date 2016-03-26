@@ -46,12 +46,22 @@ class Admin::CategoryTest < ActiveSupport::TestCase
   # TODO テストを書く。
   context "セレクトフィールド用のカテゴリー一覧を返す（カテゴリー用）" do
     setup do
-      category = admin_categories(:about)
-      @select_list = category.get_category_select_list(0)
+      @category    = admin_categories(:service)
+      @select_list = @category.get_category_select_list(0)
     end
     test "カテゴリー自身は読み込まない" do
+      exp = @category.id
+      @select_list.each do |list|
+        assert_not_equal exp, list[1]
+      end
     end
     test "カテゴリー自身よりも下層は読み込まない" do
+      categories = Admin::SiteStructure.where(parent_id: @category.id).where(page_id: nil)
+      categories.each do |cate|
+        @select_list.each do |list|
+          assert_not_equal cate.category_id, list[1]
+        end
+      end
     end
   end
 

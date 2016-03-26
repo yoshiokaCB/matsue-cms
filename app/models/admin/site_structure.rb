@@ -80,6 +80,11 @@ class Admin::SiteStructure < ActiveRecord::Base
   end
 
   def has_category_children?
+    self.children_categories_count > 0
+  end
+
+  def has_page_children?
+    self.children_pages_count > 0
   end
 
 

@@ -112,27 +112,32 @@ class Admin::SiteStructureTest < ActiveSupport::TestCase
 
   end
 
-  # TODO テストを書く。
   context "has_category_children?のテスト" do
     setup do
-      @has_categories     = admin_site_structures(:about)
-      @not_has_categories = admin_site_structures(:about)
+      @has_category     = admin_site_structures(:service)
+      @not_has_category = admin_site_structures(:about)
     end
     test "下層にカテゴリーが存在する場合、trueが返る" do
+      assert @has_category.has_category_children?
     end
     test "下層にカテゴリーが存在しない場合、falseが返る" do
+      assert_not @not_has_category.has_category_children?
     end
   end
   context "has_page_children?のテスト" do
     setup do
-      @has_pages     = admin_site_structures(:about)
-      @not_has_pages = admin_site_structures(:about)
+      @has_page     = admin_site_structures(:service)
+      @not_has_page = admin_site_structures(:about)
     end
     test "下層にページが存在する場合、trueが返る" do
+      assert @has_page.has_page_children?
     end
     test "下層にページが存在しない場合、falseが返る" do
+      assert_not @not_has_page.has_page_children?
     end
   end
+
+  # TODO テストを書く。
   context "has_children?のテスト" do
     setup do
       @has_categories_and_pages     = admin_site_structures(:about)

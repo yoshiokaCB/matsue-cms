@@ -34,7 +34,7 @@ class Admin::Category < ActiveRecord::Base
         name = ("　"*struct.depth.to_i).to_s + category.display_name
         cate_list_ary << [name, category.id]
 
-        # 下層がある場合は再帰的に下層を読み込む
+        # 下層にカテゴリーがある場合は再帰的に下層を読み込む
         if struct.children_categories_count > 0
           get_select_list(category.id, cate).each{ |ary| cate_list_ary << ary }
         end
